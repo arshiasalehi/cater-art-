@@ -17,7 +17,7 @@
       --accent-strong: #f0d7a2;
       --inactive: rgba(255, 255, 255, 0.08);
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
-      --viewer-offset: 122px;
+      --viewer-offset: 86px;
       --viewer-offset-collapsed: 58px;
     }
 
@@ -47,7 +47,7 @@
       top: 0;
       z-index: 20;
       overflow: hidden;
-      max-height: 240px;
+      max-height: 120px;
       opacity: 1;
       transition: max-height 240ms ease, opacity 240ms ease;
     }
@@ -58,71 +58,29 @@
     }
 
     .topbar {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
-      align-items: center;
+      display: flex;
+      justify-content: center;
       padding: 18px 82px 18px 24px;
-      border-bottom: 1px solid var(--panel-border);
       background: var(--panel);
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    .eyebrow {
-      margin: 0;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-    }
-
-    .title-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .title {
-      margin: 0;
-      font-size: clamp(22px, 3vw, 34px);
-      line-height: 1;
-      letter-spacing: -0.04em;
-    }
-
-    .current-label {
-      color: var(--accent);
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
     .controls {
       display: flex;
       align-items: center;
-      gap: 10px;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: center;
     }
 
     .proposal-list {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: center;
     }
 
-    .proposal-button,
-    .cycle-button {
+    .proposal-button {
       appearance: none;
       border: 1px solid var(--panel-border);
       background: var(--inactive);
@@ -132,9 +90,7 @@
     }
 
     .proposal-button:hover,
-    .cycle-button:hover,
-    .proposal-button:focus-visible,
-    .cycle-button:focus-visible {
+    .proposal-button:focus-visible {
       outline: none;
       transform: translateY(-1px);
       border-color: rgba(211, 177, 107, 0.65);
@@ -150,32 +106,10 @@
       text-transform: uppercase;
     }
 
-    .proposal-button span {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
     .proposal-button.active {
       background: linear-gradient(135deg, rgba(211, 177, 107, 0.22), rgba(240, 215, 162, 0.08));
       border-color: rgba(211, 177, 107, 0.9);
       color: var(--accent-strong);
-    }
-
-    .proposal-button.active span {
-      color: var(--accent-strong);
-    }
-
-    .cycle-button {
-      padding: 12px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
     }
 
     .chrome-toggle {
@@ -225,33 +159,21 @@
       height: calc(100vh - var(--viewer-offset-collapsed));
     }
 
-    .help {
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: var(--panel);
-      border-top: 1px solid var(--panel-border);
-      padding: 0 24px 20px;
-    }
-
     @media (max-width: 900px) {
       :root {
-        --viewer-offset: 210px;
+        --viewer-offset: 112px;
         --viewer-offset-collapsed: 62px;
       }
 
       .chrome-shell {
-        max-height: 360px;
+        max-height: 180px;
       }
 
       .topbar {
-        grid-template-columns: 1fr;
+        justify-content: flex-start;
         padding-right: 70px;
       }
 
-      .controls,
       .proposal-list {
         justify-content: flex-start;
       }
@@ -263,32 +185,16 @@
       .viewer-frame {
         border-radius: 16px;
       }
-
-      .help {
-        padding-left: 14px;
-        padding-right: 14px;
-      }
     }
   </style>
 </head>
 <body>
   <div class="chrome-shell" id="chrome-shell">
     <header class="topbar">
-      <div class="brand">
-        <p class="eyebrow">Client Proposal Viewer</p>
-        <div class="title-row">
-          <h1 class="title">Galerie Cater Art</h1>
-          <div class="current-label" id="current-label">Proposal 1</div>
-        </div>
-      </div>
       <div class="controls">
-        <button class="cycle-button" id="previous-button" type="button">Prev</button>
         <div class="proposal-list" id="proposal-list" aria-label="Website proposals"></div>
-        <button class="cycle-button" id="next-button" type="button">Next</button>
       </div>
     </header>
-
-    <p class="help">Use the numbered buttons or left and right arrow keys to cycle through the offers.</p>
   </div>
 
   <button
@@ -321,14 +227,16 @@
         { label: "1D", name: "Deep Plum", file: "proposal-1-plum.html" },
         { label: "1E", name: "Sage Garden", file: "proposal-1-sage-rose.html" },
         { label: "2", name: "Manifesto Home", file: "manifesto-home.html" },
-        { label: "3", name: "Intellectual Layering", file: "painting-detail.html" }
+        { label: "3", name: "Painting Detail", file: "painting-detail.html" },
+        { label: "4", name: "Intellectual Layering", file: "proposal-4.html" },
+        { label: "4B", name: "Forest Ochre", file: "proposal-4-forest-ochre.html" },
+        { label: "4C", name: "Sandstone Sienna", file: "proposal-4-sandstone.html" },
+        { label: "5", name: "Bath Kinetic Mask", file: "proposal-5.html" },
+        { label: "6", name: "Bath Floating View", file: "proposal-6.html" }
       ];
 
       var frame = document.getElementById("proposal-frame");
       var list = document.getElementById("proposal-list");
-      var currentLabel = document.getElementById("current-label");
-      var previousButton = document.getElementById("previous-button");
-      var nextButton = document.getElementById("next-button");
       var chromeToggle = document.getElementById("chrome-toggle");
       var activeIndex = 0;
       var chromeCollapsed = false;
@@ -352,7 +260,8 @@
           button.type = "button";
           button.className = "proposal-button";
           button.dataset.index = String(index);
-          button.innerHTML = proposal.label + "<span>" + proposal.name + "</span>";
+          button.textContent = proposal.label;
+          button.setAttribute("aria-label", "Open proposal " + proposal.label);
           button.addEventListener("click", function () {
             setActiveProposal(index);
           });
@@ -371,7 +280,6 @@
       function setActiveProposal(index) {
         activeIndex = (index + proposals.length) % proposals.length;
         frame.src = proposals[activeIndex].file;
-        currentLabel.textContent = "Proposal " + proposals[activeIndex].label + " - " + proposals[activeIndex].name;
         syncButtons();
         window.location.hash = "proposal-" + proposals[activeIndex].label;
       }
@@ -387,14 +295,6 @@
         }
         return false;
       }
-
-      previousButton.addEventListener("click", function () {
-        setActiveProposal(activeIndex - 1);
-      });
-
-      nextButton.addEventListener("click", function () {
-        setActiveProposal(activeIndex + 1);
-      });
 
       chromeToggle.addEventListener("click", function () {
         setChromeCollapsed(!chromeCollapsed);
