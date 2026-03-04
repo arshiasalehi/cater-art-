@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Galerie Cater Art landing page featuring curated paintings, artists, and manifesto video."/>
+<title>Galerie Cater Art - Manifesto Home</title>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500;600;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#c6a96c",
+          secondary: "#4E1035",
+          accent: "#1A2E80",
+          "background-light": "#f8f7f6",
+          "background-dark": "#111214",
+          ivory: "#FDFBF7"
+        },
+        fontFamily: {
+          display: ["Space Grotesk", "sans-serif"],
+          serif: ["Bodoni Moda", "serif"]
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          full: "9999px"
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .video-backed {
+    background-color: rgba(10, 11, 13, 0.72);
+    backdrop-filter: saturate(120%) blur(1.5px);
+  }
+  .video-backed-warm {
+    background-color: rgba(78, 16, 53, 0.72);
+  }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-ivory font-display overflow-x-hidden transition-colors duration-300">
+<div aria-hidden="true" class="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-0 transition-opacity duration-700" id="hooked-video-shell">
+  <video
+    aria-hidden="true"
+    autoplay
+    class="w-full h-full object-cover"
+    id="hooked-video"
+    loop
+    muted
+    playsinline
+    preload="auto"
+  >
+    <source src="assets/Galerie Cater Art - Galerie Cater Art (720p, h264).mp4" type="video/mp4"/>
+  </video>
+  <div class="absolute inset-0 bg-black/45"></div>
+</div>
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-dark/90 backdrop-blur-sm border-b border-[#2A2B2E] transition-all duration-300">
+  <div class="px-6 md:px-12 py-5 flex items-center justify-between">
+    <div class="lg:hidden">
+      <button aria-label="Open menu" class="text-ivory p-2" type="button">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex w-1/4">
+      <a class="text-xs tracking-widest uppercase hover:text-primary transition-colors" href="#contact">Montreal, QC</a>
+    </div>
+
+    <div class="flex flex-col items-center flex-1">
+      <h1 class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-white mb-4">GALERIE CATER ART</h1>
+      <nav class="hidden lg:flex gap-8 items-center">
+        <a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#exhibitions">Exhibitions</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#artists">Artists</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#newsletter">Shop</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#philosophy">About</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center justify-end w-1/4 gap-6">
+      <button class="hidden md:block text-xs font-bold tracking-widest hover:text-primary transition-colors" type="button">EN | FR</button>
+      <button aria-label="Open bag" class="text-primary hover:text-white transition-colors relative group" type="button">
+        <span class="material-symbols-outlined font-light text-[24px]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="relative z-10 pt-[100px]" id="home">
+  <section class="relative w-full h-[85vh] min-h-[600px] overflow-hidden flex items-center justify-center" id="hero-section">
+    <div class="absolute inset-0 z-0">
+      <video
+        aria-label="Hero background video"
+        autoplay
+        class="w-full h-full object-cover"
+        id="hero-video"
+        loop
+        muted
+        playsinline
+        preload="auto"
+      >
+        <source src="assets/Galerie Cater Art - Galerie Cater Art (720p, h264).mp4" type="video/mp4"/>
+      </video>
+      <div class="absolute inset-0 bg-black/55 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center gap-6 mt-40 md:mt-56">
+      <p class="font-display text-lg md:text-xl font-light text-gray-300 max-w-xl mt-4 tracking-wide leading-relaxed">
+        Where the avant-garde meets the eternal.<br/>Step into a world curated for the bold.
+      </p>
+      <a class="mt-8 inline-flex items-center gap-2 text-primary border-b border-primary pb-1 hover:text-white hover:border-white transition-all duration-300 uppercase tracking-widest text-sm font-bold" href="#exhibitions">
+        Explore Collection
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="video-backed video-backed-warm py-20 md:py-32 relative overflow-hidden" id="philosophy">
+    <div class="absolute top-0 right-0 opacity-10 pointer-events-none select-none overflow-hidden">
+      <span class="font-serif text-[20rem] leading-none text-white whitespace-nowrap -mr-20">VISION</span>
+    </div>
+
+    <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 relative z-10">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm relative shadow-2xl bg-black">
+          <video
+            aria-label="Manifesto visual video"
+            autoplay
+            class="w-full h-full object-cover"
+            controls
+            loop
+            muted
+            playsinline
+            poster="assets/p1.jpg"
+            preload="metadata"
+          >
+            <source src="assets/v1.mp4" type="video/mp4"/>
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/70 to-transparent pointer-events-none"></div>
+        </div>
+      </div>
+
+      <div class="lg:col-start-7 lg:col-span-6 flex flex-col gap-8 text-ivory relative z-10">
+        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase border-l-2 border-primary pl-4">The Philosophy</span>
+        <h3 class="font-serif text-4xl md:text-6xl font-medium leading-tight">Redefining contemporary spaces.</h3>
+        <div class="space-y-6 text-lg font-light text-gray-200 leading-relaxed max-w-lg">
+          <p>
+            Galerie Cater Art is more than a gallery; it is a movement. We champion the unconventional,
+            the bold, and the meticulously crafted.
+          </p>
+          <p>
+            Our curated selection transcends traditional boundaries, inviting collectors to experience art as an
+            immersive dialogue between space and emotion.
+          </p>
+        </div>
+        <div class="pt-4">
+          <a class="inline-flex bg-transparent border border-ivory/30 text-ivory hover:bg-ivory hover:text-secondary px-8 py-4 text-xs font-bold uppercase tracking-widest transition-all duration-300" href="#contact">
+            Read Our Story
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 video-backed px-4 md:px-12 border-t border-white/10" id="exhibitions">
+    <div class="flex justify-between items-end mb-16 container mx-auto">
+      <h2 class="font-serif text-4xl md:text-5xl text-white">Curated Works</h2>
+      <a class="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-primary transition-colors" href="#exhibitions">
+        View All Works
+        <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+      </a>
+    </div>
+
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 container mx-auto">
+      <div class="group relative break-inside-avoid cursor-pointer overflow-hidden">
+        <img alt="Painting 1" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="assets/p1.jpg"/>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 border-[1px] border-primary/30 m-4">
+          <h4 class="font-serif text-2xl text-ivory text-center mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Untitled Study I</h4>
+          <p class="font-display text-primary text-xs tracking-widest uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Galerie Cater Art</p>
+        </div>
+      </div>
+
+      <div class="group relative break-inside-avoid cursor-pointer overflow-hidden">
+        <img alt="Painting 2" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="assets/p2.jpg"/>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 border-[1px] border-primary/30 m-4">
+          <h4 class="font-serif text-2xl text-ivory text-center mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Untitled Study II</h4>
+          <p class="font-display text-primary text-xs tracking-widest uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Galerie Cater Art</p>
+        </div>
+      </div>
+
+      <div class="group relative break-inside-avoid cursor-pointer overflow-hidden">
+        <img alt="Painting 3" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="assets/p3.jpg"/>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 border-[1px] border-primary/30 m-4">
+          <h4 class="font-serif text-2xl text-ivory text-center mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Untitled Study III</h4>
+          <p class="font-display text-primary text-xs tracking-widest uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Galerie Cater Art</p>
+        </div>
+      </div>
+
+      <div class="group relative break-inside-avoid cursor-pointer overflow-hidden">
+        <img alt="Painting 4" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="assets/p4.webp"/>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 border-[1px] border-primary/30 m-4">
+          <h4 class="font-serif text-2xl text-ivory text-center mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Untitled Study IV</h4>
+          <p class="font-display text-primary text-xs tracking-widest uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Galerie Cater Art</p>
+        </div>
+      </div>
+
+      <div class="group relative break-inside-avoid cursor-pointer overflow-hidden">
+        <img alt="Painting 5" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700" decoding="async" loading="lazy" src="assets/p5.heic"/>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 border-[1px] border-primary/30 m-4">
+          <h4 class="font-serif text-2xl text-ivory text-center mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Untitled Study V</h4>
+          <p class="font-display text-primary text-xs tracking-widest uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">Galerie Cater Art</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center md:hidden">
+      <a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-primary transition-colors" href="#exhibitions">
+        View All Works
+        <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-24 video-backed overflow-hidden border-t border-white/10" id="artists">
+    <div class="container mx-auto px-6 md:px-12 mb-10">
+      <h2 class="font-serif text-3xl md:text-4xl text-white mb-2">Featured Artists</h2>
+      <p class="text-gray-500 text-sm font-light uppercase tracking-widest">Global Talents</p>
+    </div>
+
+    <div class="flex overflow-x-auto gap-8 px-6 md:px-12 pb-8 hide-scrollbar snap-x snap-mandatory">
+      <div class="flex-none w-[280px] md:w-[320px] snap-center group relative cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden">
+          <img alt="Featured artist portrait 1" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0" decoding="async" loading="lazy" src="assets/a1.jpg.webp"/>
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 px-6">
+          <h3 class="font-serif text-3xl text-white mix-blend-difference group-hover:translate-x-2 transition-transform duration-300">Julian<br/>Vaughn</h3>
+        </div>
+      </div>
+
+      <div class="flex-none w-[280px] md:w-[320px] snap-center group relative cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden">
+          <img alt="Featured artist portrait 2" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0" decoding="async" loading="lazy" src="assets/a2.jpg.webp"/>
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 px-6">
+          <h3 class="font-serif text-3xl text-white mix-blend-difference group-hover:translate-x-2 transition-transform duration-300">Amara<br/>Diallo</h3>
+        </div>
+      </div>
+
+      <div class="flex-none w-[280px] md:w-[320px] snap-center group relative cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden">
+          <img alt="Featured artist portrait 3" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0" decoding="async" loading="lazy" src="assets/a3.jpg.webp"/>
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 px-6">
+          <h3 class="font-serif text-3xl text-white mix-blend-difference group-hover:translate-x-2 transition-transform duration-300">Elias<br/>Thorne</h3>
+        </div>
+      </div>
+
+      <div class="flex-none w-[280px] md:w-[320px] snap-center group relative cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden">
+          <img alt="Featured artist portrait 4" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0" decoding="async" loading="lazy" src="assets/a4.png.webp"/>
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 px-6">
+          <h3 class="font-serif text-3xl text-white mix-blend-difference group-hover:translate-x-2 transition-transform duration-300">Celeste<br/>Rios</h3>
+        </div>
+      </div>
+
+      <div class="flex-none w-[280px] md:w-[320px] snap-center group relative cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden">
+          <img alt="Featured artist portrait 5" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0" decoding="async" loading="lazy" src="assets/a5.jpg.webp"/>
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 px-6">
+          <h3 class="font-serif text-3xl text-white mix-blend-difference group-hover:translate-x-2 transition-transform duration-300">Noah<br/>Kline</h3>
+        </div>
+      </div>
+
+      <div class="flex-none w-[280px] md:w-[320px] snap-center group relative cursor-pointer">
+        <div class="h-[400px] w-full overflow-hidden">
+          <img alt="Featured artist portrait 6" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0" decoding="async" loading="lazy" src="assets/a6.png.webp"/>
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 px-6">
+          <h3 class="font-serif text-3xl text-white mix-blend-difference group-hover:translate-x-2 transition-transform duration-300">Mira<br/>Sato</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-backed py-20 border-t border-white/10" id="press">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500">As seen in</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-60" id="press-roof-links">
+        <a
+          class="flex justify-center items-center h-12 hover:opacity-100 transition-opacity duration-200"
+          data-press-message="VOGUE: A standout take on collectible contemporary works with cinematic presentation."
+          href="https://www.vogue.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><h4 class="font-serif text-3xl italic font-bold">VOGUE</h4></a>
+        <a
+          class="flex justify-center items-center h-12 hover:opacity-100 transition-opacity duration-200"
+          data-press-message="ARTFORUM: The manifesto positioning reframes the gallery model with sharp editorial clarity."
+          href="https://www.artforum.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><h4 class="font-serif text-2xl font-bold tracking-tight">ARTFORUM</h4></a>
+        <a
+          class="flex justify-center items-center h-12 hover:opacity-100 transition-opacity duration-200"
+          data-press-message="Hypebeast: A bold visual identity that bridges design culture and fine art audiences."
+          href="https://hypebeast.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><h4 class="font-display text-xl font-black tracking-tighter uppercase">Hypebeast</h4></a>
+        <a
+          class="flex justify-center items-center h-12 hover:opacity-100 transition-opacity duration-200"
+          data-press-message="Kinfolk: Quietly dramatic curation with an atmosphere rooted in craft and restraint."
+          href="https://www.kinfolk.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        ><h4 class="font-serif text-2xl font-medium uppercase">Kinfolk</h4></a>
+      </div>
+      <div class="mt-8 mx-auto max-w-3xl rounded-sm border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-4 min-h-[84px]">
+        <p class="text-[10px] uppercase tracking-[0.22em] text-gray-500 mb-2">Press Note</p>
+        <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed" id="press-roof-message">
+          Hover a publication name to preview a highlight quote.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 video-backed border-t border-[#2A2B2E]" id="newsletter">
+    <div class="container mx-auto px-6 md:px-12 flex justify-center">
+      <div class="w-full max-w-2xl bg-[#1c1d20] border border-[#2A2B2E] p-8 md:p-16 text-center shadow-2xl relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-primary"></div>
+        <h2 class="font-serif text-3xl md:text-4xl text-ivory mb-4">Join Our Collector Circle</h2>
+        <p class="text-gray-400 font-display font-light mb-8 max-w-sm mx-auto">
+          Receive exclusive invitations to vernissages, private viewings, and artist talks.
+        </p>
+        <form class="flex flex-col gap-4" action="#" method="post">
+          <div class="relative">
+            <input aria-label="Email address" class="w-full bg-transparent border-b border-gray-600 py-3 text-ivory placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-center font-display" placeholder="Your Email Address" required="" type="email"/>
+          </div>
+          <button class="mt-6 mx-auto bg-primary/90 hover:bg-primary text-background-dark font-bold py-3 px-8 uppercase tracking-widest text-xs transition-colors w-fit" type="submit">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="relative z-10 bg-black/80 text-white pt-16 pb-8 border-t border-white/5 font-display" id="contact">
+  <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <div class="md:col-span-1">
+      <h4 class="font-serif text-xl mb-6">GALERIE CATER ART</h4>
+      <p class="text-gray-500 text-sm leading-relaxed">
+        1455 Boulevard de Maisonneuve Ouest<br/>
+        Montreal, QC H3G 1M8<br/>
+        Canada
+      </p>
+    </div>
+    <div>
+      <h5 class="text-xs font-bold uppercase tracking-widest text-primary mb-6">Explore</h5>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a class="hover:text-white transition-colors" href="#exhibitions">Exhibitions</a></li>
+        <li><a class="hover:text-white transition-colors" href="#artists">Artists</a></li>
+        <li><a class="hover:text-white transition-colors" href="#newsletter">Private Sales</a></li>
+        <li><a class="hover:text-white transition-colors" href="#press">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-xs font-bold uppercase tracking-widest text-primary mb-6">Connect</h5>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a class="hover:text-white transition-colors" href="#">Instagram</a></li>
+        <li><a class="hover:text-white transition-colors" href="#">Facebook</a></li>
+        <li><a class="hover:text-white transition-colors" href="#">Artsy</a></li>
+        <li><a class="hover:text-white transition-colors" href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-xs font-bold uppercase tracking-widest text-primary mb-6">Legal</h5>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+        <li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
+    <p class="text-xs text-gray-600 mb-4 md:mb-0">&copy; 2026 Galerie Cater Art. All Rights Reserved.</p>
+    <div class="text-xs text-gray-600">Designed for the Avant-Garde.</div>
+  </div>
+</footer>
+<script>
+  (function () {
+    var linksRoot = document.getElementById("press-roof-links");
+    var preview = document.getElementById("press-roof-message");
+    if (!linksRoot || !preview) return;
+
+    var defaultMessage = "Hover a publication name to preview a highlight quote.";
+    var links = linksRoot.querySelectorAll("a[data-press-message]");
+
+    links.forEach(function (link) {
+      var setMessage = function () {
+        preview.textContent = link.getAttribute("data-press-message") || defaultMessage;
+      };
+      link.addEventListener("mouseenter", setMessage);
+      link.addEventListener("focus", setMessage);
+      link.addEventListener("mouseleave", function () {
+        preview.textContent = defaultMessage;
+      });
+      link.addEventListener("blur", function () {
+        preview.textContent = defaultMessage;
+      });
+    });
+  })();
+
+  (function () {
+    var hero = document.getElementById("hero-section");
+    var heroVideo = document.getElementById("hero-video");
+    var shell = document.getElementById("hooked-video-shell");
+    var shellVideo = document.getElementById("hooked-video");
+    if (!hero || !shell || !shellVideo) return;
+
+    var hookOffset = 0;
+    var hooked = false;
+
+    var setHookOffset = function () {
+      hookOffset = hero.offsetTop + Math.max(120, hero.offsetHeight * 0.35);
+    };
+
+    var setHooked = function (nextValue) {
+      if (hooked === nextValue) return;
+      hooked = nextValue;
+      shell.style.opacity = hooked ? "1" : "0";
+
+      if (hooked && heroVideo) {
+        try {
+          shellVideo.currentTime = heroVideo.currentTime;
+        } catch (err) {
+          // Keep playback uninterrupted if syncing time fails in any browser.
+        }
+      }
+      if (hooked) {
+        shellVideo.play().catch(function () {});
+      }
+    };
+
+    var onScroll = function () {
+      setHooked(window.scrollY >= hookOffset);
+    };
+
+    setHookOffset();
+    onScroll();
+    window.addEventListener("resize", function () {
+      setHookOffset();
+      onScroll();
+    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+  })();
+</script>
+</body>
+</html>
